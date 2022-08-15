@@ -38,11 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'clientes.apps.ClientesConfig',
-    'login.apps.LoginConfig',
     'cuentas.apps.CuentasConfig',
     'prestamos.apps.PrestamosConfig',
-    'tarjetas.apps.TarjetasConfig'
-
+    'tarjetas.apps.TarjetasConfig',
+    'registration.apps.RegistrationConfig'
 ]
 
 MIDDLEWARE = [
@@ -128,6 +127,6 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL = 'clientes:index'
+LOGIN_REDIRECT_URL = 'cuentas:cuenta'
 
 LOGOUT_REDIRECT_URL = 'login'
