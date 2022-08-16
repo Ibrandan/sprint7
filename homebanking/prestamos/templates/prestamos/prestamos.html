@@ -1,3 +1,18 @@
 <form action="" method="post">
-    {{csrf_token}}
+    {%csrf_token%}
+    <div>
+        <label for="">Tipo de Prestamo</label>
+        <select name="" id="">
+            <option value="">Prestamo 1</option>
+            <option value="" selected>Prestamo 2</option>
+            <option value="">Prestamo 3</option>
+        </select>
+    </div>
+    <div>
+        <label for="">Fecha</label>
+        <input type="date" name="" id="">
+    </div>
+    <p>Para validar form:</p>
+    <a href="https://docs.djangoproject.com/en/4.0/topics/forms/">Link1</a>
+    <a href="https://docs.djangoproject.com/en/4.0/ref/forms/validation/">Link2</a>
 </form>
