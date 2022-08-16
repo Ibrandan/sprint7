@@ -157,7 +157,7 @@ aside .sidebar a span {
     font-size: 1.6rem;
 }
 
-aside .sidebar a:last-child {
+aside .sidebar #sidebar__logout {
     position: absolute;
     bottom: 1rem;
     width: 100%;
@@ -355,7 +355,7 @@ main table tbody tr:last-child td {
     border: none;
 }
 
-main .movimientos a {
+.movimientos__button {
     display: flex;
     justify-content: center;
     width: 10%;

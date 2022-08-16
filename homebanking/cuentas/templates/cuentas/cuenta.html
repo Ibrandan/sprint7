@@ -8,10 +8,9 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
       rel="stylesheet">
       <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-      <link rel="stylesheet" href="../../static/cuentas/css/cuenta.css">
 </head>
 {% load static %}
-<link rel="stylesheet" href="{% static 'cuentas/css/cuentas.css' %}">
+<link rel="stylesheet" href="{% static 'cuentas/css/cuenta.css' %}">
 
 <body>
     <div class="contenedor">
@@ -26,6 +25,7 @@
             </div>
 
             <div class="sidebar">
+                {% if user.is_authenticated %}
                 <a href="#">
                     <span class="material-icons-sharp">account_balance</span>
                     <h3>Inicio</h3>
@@ -46,6 +46,7 @@
                     <span class="material-icons-sharp">request_quote</span>
                     <h3>Prestamos</h3>
                 </a>
+                {% endif %}
                 <a href="#">
                     <span class="material-icons-sharp">monetization_on</span>
                     <h3>Divisas</h3>
@@ -54,10 +55,13 @@
                     <span class="material-icons-sharp">help</span>
                     <h3>Ayuda</h3>
                 </a>
-                <a href="#">
+                {% if user.is_authenticated %}
+                <a id="sidebar__logout" href="{% url 'logout' %}">
                     <span class="material-icons-sharp">logout</span>
                     <h3>Cerrar Sesión</h3>
                 </a>
+                {% endif %}
+
         </aside>
     <main>
         <div class="profile">
@@ -65,7 +69,7 @@
                 <img src="https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" alt="">
             </div>
             <div class="info">
-                <p>Bienvenido, <b>Username</b></p>
+                <p>Bienvenido, <b>{{user.username}}</b></p>
             </div>
         </div>
         <div class="insights">
@@ -74,8 +78,9 @@
                 <div class="middle">
                     <div class="lef">
                         <h3>Dinero disponible</h3>
-                        <h3>$25005</h1>
+                        <h3>$25005</h3>
                     </div>
+                    <a href=""></a>
                 </div>
             </div>
             <div class="sales">
@@ -88,7 +93,7 @@
                         <div class="card__inner">
                             <div class="front">
                                 <div class="row">
-                                    <img src="{% static 'cuentas/images/chip.png' %}" class="card__chip" alt="">
+                                    <img src="{% static 'tarjetas/images/chip.png' %}" class="card__chip" alt="">
                                     <img src="{% static 'registration/images/logo_itbank.png' %}" class="card__logo" alt="">
                                 </div>
                                 <div class="row card__num">
@@ -106,7 +111,7 @@
                                 <div class="barra"></div>
                                 <div class="row card__cvv">
                                     <figure>
-                                        <img src="{% static 'cuentas/images/pattern.png' %}" class="" alt="">
+                                        <img src="{% static 'tarjetas/images/pattern.png' %}" class="" alt="">
                                     </figure>
                                     <p>748</p>
                                 </div>
@@ -182,7 +187,7 @@
                     
                 </tbody>
             </table>
-            <a href="#" class="btn btn-primary">Ver más</a>
+            <a href="#" class="movimientos__button">Ver más</a>
         </div>
     </main>
 
@@ -227,7 +232,6 @@
         <div class="divisas">
             <h2>Divisas</h2>
             <div class="divisa-info">
-
                 <div class="divisa">
                     <img src="" alt="">
                     <h3>Dolar Oficial</h3>
@@ -241,7 +245,6 @@
                 </div>
             </div>
             <div class="divisa-info">
-
                 <div class="divisa">
                     <img src="" alt="">
                     <h3>Dolar Blue</h3>

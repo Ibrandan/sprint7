@@ -1,6 +1,4 @@
-from django.shortcuts import render
+from django.views.generic import TemplateView
 
-# Create your views here.
-
-def cuenta(request):
-    return render(request, 'cuentas/cuentas.html')
+class CuentaView(TemplateView):
+    template_name = 'cuentas/cuenta.html'

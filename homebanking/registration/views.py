@@ -15,4 +15,4 @@ class SignUp(generic.CreateView):
         username, password = form.cleaned_data.get('username'), form.cleaned_data.get('password1')
         new_user = authenticate(username=username, password=password)
         login(self.request, new_user)
-        return HttpResponseRedirect(reverse('clientes:index'))
+        return HttpResponseRedirect(reverse('cuentas:cuenta'))

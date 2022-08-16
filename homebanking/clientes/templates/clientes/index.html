@@ -7,18 +7,22 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     
+    <link rel="stylesheet" href="../../static/clientes/css/index.css">
+<!-- 
     {% load static %}
-    <link rel="stylesheet" href="{% static 'clientes/css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'clientes/css/index.css' %}"> -->
 </head>
 <body>
 
 <header>
-    <figure id="figure-logo">
-        <img src="" alt="">
-    </figure>
+    <a href="">
+        <figure id="figure-logo">
+            <img src="{% static 'registration/images/logo_itbank.png' %}" alt="">
+        </figure>
+    </a>
     <div>
-        <a href="html/login.html" class="btn btn-outline-primary">Iniciar sesión</a>
-        <a href="html/registro.html" class="btn btn-primary">Registrarse</a>
+        <a href="{% url 'login' %}" class="btn btn-outline-primary">Iniciar sesión</a>
+        <a href="{% url 'registration:signup' %}" class="btn btn-primary">Registrarse</a>
     </div>
 </header>
 <main>
@@ -29,26 +33,47 @@
         <div class="divisas__card">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Dolar 1</h5>
-                    <p class="card-text">Lorem ipsum</p>
+                    <div class="divisa">
+                        <img src="" alt="">
+                        <h3>Dolar Oficial</h3>
+                    </div>
+                    <div class="compra-venta">
+                        <p>Compra:<span></span></p>
+                        <p>Venta:<span></span></p>
+                    </div>
+                    <div class="variacion">
+                        <p>Variacion:<span></span></p>
+                    </div>
                 </div>
             </div>
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Dolar 2</h5>
-                    <p class="card-text">Lorem ipsum</p>
+                    <div class="divisa">
+                        <img src="" alt="">
+                        <h3>Dolar Oficial</h3>
+                    </div>
+                    <div class="compra-venta">
+                        <p>Compra:<span></span></p>
+                        <p>Venta:<span></span></p>
+                    </div>
+                    <div class="variacion">
+                        <p>Variacion:<span></span></p>
+                    </div>
                 </div>
             </div>
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Dolar 3</h5>
-                    <p class="card-text">Lorem ipsum</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Dolar 4</h5>
-                    <p class="card-text">Lorem ipsum</p>
+                    <div class="divisa">
+                        <img src="" alt="">
+                        <h3>Dolar Oficial</h3>
+                    </div>
+                    <div class="compra-venta">
+                        <p>Compra:<span></span></p>
+                        <p>Venta:<span></span></p>
+                    </div>
+                    <div class="variacion">
+                        <p>Variacion:<span></span></p>
+                    </div>
                 </div>
             </div>
         </div>
