@@ -1,277 +1,177 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
-      rel="stylesheet">
-      <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-</head>
+{% extends 'cuentas/base.html' %}
 {% load static %}
-<link rel="stylesheet" href="{% static 'cuentas/css/cuenta.css' %}">
 
-<body>
-    <div class="contenedor">
-        <aside>
-            <div class="top">
-                <figure class="figure-logo">
-                    <img src="https://www.itba.edu.ar/intranet/ols/wp-content/uploads/sites/4/2018/08/logo-itba-1080x675.png" alt="">
-                    </figure>
-                <div class="close" id="close-btn">
-                    <span class="material-icons-sharp">close</span>
-                </div>
-            </div>
-
-            <div class="sidebar">
-                {% if user.is_authenticated %}
-                <a href="#">
-                    <span class="material-icons-sharp">account_balance</span>
-                    <h3>Inicio</h3>
-                </a>
-                <a href="#">
-                    <span class="material-icons-sharp">person</span>
-                    <h3>Perfil</h3>
-                </a>
-                <a href="#">
-                    <span class="material-icons-sharp">account_balance_wallet</span>
-                    <h3>Fondos</h3>
-                </a>
-                <a href="#">
-                    <span class="material-icons-sharp">credit_card</span>
-                    <h3>Tarjetas</h3>
-                </a>
-                <a href="#">
-                    <span class="material-icons-sharp">request_quote</span>
-                    <h3>Prestamos</h3>
-                </a>
-                {% endif %}
-                <a href="#">
-                    <span class="material-icons-sharp">monetization_on</span>
-                    <h3>Divisas</h3>
-                </a>
-                <a href="#">
-                    <span class="material-icons-sharp">help</span>
-                    <h3>Ayuda</h3>
-                </a>
-                {% if user.is_authenticated %}
-                <a id="sidebar__logout" href="{% url 'logout' %}">
-                    <span class="material-icons-sharp">logout</span>
-                    <h3>Cerrar Sesión</h3>
-                </a>
-                {% endif %}
-
-        </aside>
-    <main>
-        <div class="profile">
-            <div class="profile-photo">
-                <img src="https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" alt="">
-            </div>
-            <div class="info">
-                <p>Bienvenido, <b>{{user.username}}</b></p>
-            </div>
+{% block content %}
+<div class="home-content">
+  <div class="sales-boxes">
+    <div class="top-sales-flex">
+      <div class="top-sales box">
+        <div class="">
+          <h2>Dinero Disponible</h2>
+          <p class="product">$1200</p>
+          <br><br>
         </div>
-        <div class="insights">
-            <div class="sales">
-                <span></span>
-                <div class="middle">
-                    <div class="lef">
-                        <h3>Dinero disponible</h3>
-                        <h3>$25005</h3>
-                    </div>
-                    <a href=""></a>
-                </div>
-            </div>
-            <div class="sales">
-                <span></span>
-                <div class="middle">
-                    <div class="lef">
-                        <h3>Tarjetas</h3>
-                    </div>
-                    <div class="card">
-                        <div class="card__inner">
-                            <div class="front">
-                                <div class="row">
-                                    <img src="{% static 'tarjetas/images/chip.png' %}" class="card__chip" alt="">
-                                    <img src="{% static 'registration/images/logo_itbank.png' %}" class="card__logo" alt="">
-                                </div>
-                                <div class="row card__num">
-                                    <p>1234</p>
-                                    <p>5678</p>
-                                    <p>9876</p>
-                                    <p>5000</p>
-                                </div>
-                                <div class="row card__name">
-                                    <p>{{user.username}}</p>
-                                    <p> 10/26</p>
-                                </div>
-                            </div>
-                            <div class="back">
-                                <div class="barra"></div>
-                                <div class="row card__cvv">
-                                    <figure>
-                                        <img src="{% static 'tarjetas/images/pattern.png' %}" class="" alt="">
-                                    </figure>
-                                    <p>748</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="">Ver todas las tarjetas</a>
-                </div>
-            </div>
+        <hr>
+        <div class="">
+          <a class="button" href="#">Ingresar dinero</a>
+          <a class="button" href="#">Transferir dinero</a>
         </div>
-        <div class="movimientos">
-            <h2>Movimientos</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <td></td>
-                        <th>Operacion</th>
-                        <th>Tipo de Operacion</th>
-                        <th>Estado</th>
-                        <th>Fecha</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><span class="material-icons-sharp pendiente">shopping_bag</span></td>
-                        <td>Pasajes en Aerolineas Argentinas</td>
-                        <td>Compra</td>
-                        <td>Pendiente</td>
-                        <td>/08/2022</td>
-                    </tr>
-                    <tr>
-                        <td><span class="material-icons-sharp devuelto">shopping_bag</span></td>
-                        <td>Compra de Prueba en Uber</td>
-                        <td>Compra</td>
-                        <td>Devuelto</td>
-                        <td>/08/2022</td>
-                    </tr>
-                    <tr>
-                        <td><span class="material-icons-sharp pendiente">shopping_bag</span></td>
-                        <td>Transferiste a</td>
-                        <td>Transferencia</td>
-                        <td>Pendiente</td>
-                        <td>/08/2022</td>
-                    </tr>
-                    <tr>
-                        <td><span class="material-icons-sharp aprobado">shopping_bag</span></td>
-                        <td>Recargaste SUBE</td>
-                        <td>Pago de servicio</td>
-                        <td>Aprobado</td>
-                        <td>/08/2022</td>
-                    </tr>
-                    <tr>
-                        <td><span class="material-icons-sharp aprobado">shopping_bag</span></td>
-                        <td>Transferiste a</td>
-                        <td>Transferencia</td>
-                        <td>Aprobado</td>
-                        <td>/08/2022</td>
-                    </tr>
-                    <tr>
-                        <td><span class="material-icons-sharp aprobado">shopping_bag</span></td>
-                        <td>Transferiste a</td>
-                        <td>Transferencia</td>
-                        <td>Aprobado</td>
-                        <td>/08/2022</td>
-                    </tr>
-                    <tr>
-                        <td><span class="material-icons-sharp aprobado">shopping_bag</span></td>
-                        <td>Pagaste Internet Fibra optica</td>
-                        <td>Pago de servicio</td>
-                        <td>Aprobado</td>
-                        <td>/08/2022</td>
-                    </tr>
-                    
-                </tbody>
-            </table>
-            <a href="#" class="movimientos__button">Ver más</a>
-        </div>
-    </main>
-
-    <div class="right">
-        <div class="top">
-            <button class="material-icons-sharp">
-                menu
-            </button>
-        </div>
-        <div class="ultimas-novedades">
-            <div class="novedades">
-                <h2>Novedades</h2>
-                <div class="novedad">
-                    <div class="novedad__img">
-                        <img src="" alt="">
-                    </div>
-                    <div class="mensaje">
-                        <p>Su transferencia ha sido enviada con exito</p>
-                        <small>Hace 1 hora</small>
-                    </div>
-                </div>
-                <div class="novedad">
-                    <div class="novedad__img">
-                        <img src="" alt="">
-                    </div>
-                    <div class="mensaje">
-                        <p>Itbank ha lanzado nuevos prestamos</p>
-                        <small>Lunes 8 de agosto de 2022</small>
-                    </div>
-                </div>
-                <div class="novedad">
-                    <div class="novedad__img">
-                        <img src="" alt="">
-                    </div>
-                    <div class="mensaje">
-                        <p>Itbank incluyo una nueva linea de tarjetas llamada black card</p>
-                        <small>Jueves 4 de agosto</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="divisas">
-            <h2>Divisas</h2>
-            <div class="divisa-info">
-                <div class="divisa">
-                    <img src="" alt="">
-                    <h3>Dolar Oficial</h3>
-                </div>
-                <div class="compra-venta">
-                    <p>Compra:<span></span></p>
-                    <p>Venta:<span></span></p>
-                </div>
-                <div class="variacion">
-                    <p>Variacion:<span></span></p>
-                </div>
-            </div>
-            <div class="divisa-info">
-                <div class="divisa">
-                    <img src="" alt="">
-                    <h3>Dolar Blue</h3>
-                </div>
-                <div class="compra-venta">
-                    <p>Compra:<span></span></p>
-                    <p>Venta:<span></span></p>
-                </div>
-                <div class="variacion">
-                    <p>Variacion:<span></span></p>
-                </div>
-            </div>
-            <div class="divisa-info">
-                <div class="divisa">
-                    <img src="" alt="">
-                    <h3>Dolar Bolsa</h3>
-                </div>
-                <div class="compra-venta">
-                    <p>Compra:<span></span></p>
-                    <p>Venta:<span></span></p>
-                </div>
-                <div class="variacion">
-                    <p>Variacion:<span></span></p>
-                </div>
-            </div>
-        </div>
+      </div>
+      <div class="top-sales box">
+        <div class="middle">
+          <div class="lef">
+              <h2>Tarjetas</h2>
+          </div>
+          <div class="card">
+              <div class="card__inner">
+                  <div class="front">
+                      <div class="row">
+                          <img src="{% static 'tarjetas/images/chip.png' %}" class="card__chip" alt="">
+                          <img src="{% static 'registration/images/logo_itbank.png' %}" class="card__logo" alt="">
+                      </div>
+                      <div class="row card__num">
+                          <p>1234</p>
+                          <p>5678</p>
+                          <p>9876</p>
+                          <p>5000</p>
+                      </div>
+                      <div class="row card__name">
+                          <p>{{user.username}}</p>
+                          <p> 10/26</p>
+                      </div>
+                  </div>
+                  <div class="back">
+                      <div class="barra"></div>
+                      <div class="row card__cvv">
+                          <figure>
+                              <img src="{% static 'tarjetas/images/pattern.png' %}" class="" alt="">
+                          </figure>
+                          <p>748</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="">
+            <a class="button" href="">Ver más</a>
+          </div>
+      </div>
+      </div>
+    </div>
+    <div class="movimientos">
+    <h2>Movimientos</h2>
+      <table>
+        <thead>
+            <tr>
+                <th>Operacion</th>
+                <th>Tipo de Operacion</th>
+                <th>Estado</th>
+                <th>Fecha</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Pasajes en Aerolineas Argentinas</td>
+                <td>Compra</td>
+                <td>Pendiente</td>
+                <td>10/08/2022</td>
+            </tr>
+            <tr>
+                <td>Compra de Prueba en Uber</td>
+                <td>Compra</td>
+                <td>Devuelto</td>
+                <td>10/08/2022</td>
+            </tr>
+            <tr>
+                <td>Transferiste a</td>
+                <td>Transferencia</td>
+                <td>Pendiente</td>
+                <td>10/08/2022</td>
+            </tr>
+            <tr>
+                <td>Recargaste SUBE</td>
+                <td>Pago de servicio</td>
+                <td>Aprobado</td>
+                <td>10/08/2022</td>
+            </tr>
+            <tr>
+                <td>Pagaste Internet Fibra optica</td>
+                <td>Pago de servicio</td>
+                <td>Aprobado</td>
+                <td>10/08/2022</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="container-button">
+      <a class="button" href="#">Ver más</a>
     </div>
     </div>
-</body>
-</html>
+  </div>
+  <div class="overview-boxes">
+    <div class="box">
+      <div class="right-side title">
+        <h2>Novedades</h2>
+        <div class="novedad">
+          <div class="novedad__img">
+              <img src="" alt="">
+          </div>
+          <div class="mensaje">
+              <p>Su transferencia ha sido enviada con exito</p>
+              <small>Hace 1 hora</small>
+          </div>
+      </div>
+      <div class="novedad">
+          <div class="novedad__img">
+              <img src="" alt="">
+          </div>
+          <div class="mensaje">
+              <p>Itbank ha lanzado nuevos prestamos</p>
+              <small>Lunes 8 de agosto de 2022</small>
+          </div>
+      </div>
+      <div class="novedad">
+          <div class="novedad__img">
+              <img src="" alt="">
+          </div>
+          <div class="mensaje">
+              <p>Itbank incluyo una nueva linea de tarjetas llamada black card</p>
+              <small>Jueves 4 de agosto</small>
+          </div>
+      </div>
+      </div>
+    </div>
+    <div class="box">
+      <i class="bx bx-money money"></i>
+      <div class="right-side">
+        <div class="box-topic">Dolar Oficial</div>
+        <div class="number">$140,00</div>
+        <div class="indicator">
+          <i class="bx bx-up-arrow-alt"></i>
+          <span class="text">Up from yesterday</span>
+        </div>
+      </div>
+    </div>
+    <div class="box">
+      <i class="bx bx-money money"></i>
+      <div class="right-side">
+        <div class="box-topic">Dolar Blue</div>
+        <div class="number">$295,00</div>
+        <div class="indicator">
+          <i class="bx bx-up-arrow-alt"></i>
+          <span class="text">Up from yesterday</span>
+        </div>
+      </div>
+    </div>
+    <div class="box">
+      <i class="bx bx-money money blue"></i>
+      <div class="right-side">
+        <div class="box-topic">Dolar bolsa</div>
+        <div class="number">$292,00</div>
+        <div class="indicator">
+          <i class="bx bx-up-arrow-alt"></i>
+          <span class="text">Up from yesterday</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
