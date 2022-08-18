@@ -7,7 +7,7 @@
   font-family: "Poppins", sans-serif;
 }
 
-.container {
+.contenedor {
   position: relative;
   width: 100%;
   background-color: #fff;
@@ -19,9 +19,7 @@
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
-  left: 75%;
   width: 50%;
-  transition: 1s 0.7s ease-in-out;
   display: grid;
   grid-template-columns: 1fr;
   z-index: 5;
@@ -33,10 +31,38 @@ form {
   justify-content: center;
   flex-direction: column;
   padding: 0rem 5rem;
-  transition: all 0.2s 0.7s;
   overflow: hidden;
   grid-column: 1 / 2;
   grid-row: 1 / 2;
+}
+
+.form-group {
+  max-width: 400px;
+  width: 100%;
+  margin: 10px 0;
+  border-radius: 55px;
+  padding: 0 0.4rem;
+  position: relative;
+  display: flex;
+  flex-direction: column ;
+}
+
+.form-group label {
+  margin-left: 1rem
+}
+
+.form-group label::after {
+  content: ":";
+}
+.form-group input {
+  outline: none;
+  border: none;
+  border-radius: 30px; 
+  font-weight: 600;
+  font-size: 1.1rem;
+  background-color: #f0f0f0;
+  color: #333;
+  padding: 1rem;
 }
 
 #figure-logo {
@@ -45,27 +71,6 @@ form {
 
 #figure-logo img {
   width: 100%;
-}
-
-.input-field {
-  max-width: 380px;
-  width: 100%;
-  background-color: #f0f0f0;
-  margin: 10px 0;
-  height: 55px;
-  border-radius: 55px;
-  display: grid;
-  grid-template-columns: 15% 85%;
-  padding: 0 0.4rem;
-  position: relative;
-}
-
-.input-field i {
-  text-align: center;
-  line-height: 55px;
-  color: #acacac;
-  transition: 0.5s;
-  font-size: 1.1rem;
 }
 
 .input-field input {
@@ -82,7 +87,7 @@ form {
   color: #aaa;
   font-weight: 500;
 }
-
+/* 
 .btn {
   width: 150px;
   background-color: #909cc2;
@@ -91,15 +96,26 @@ form {
   height: 50px;
   border-radius: 49px;
   color: #fff;
-  text-transform: uppercase;
+  } */
+
+.btn {
+  margin-top: .8rem;
+  width: 250px;
+  outline: none;
+  padding: .8rem;
+  border-radius: 30px;
   font-weight: 600;
-  margin: 10px 0;
-  cursor: pointer;
-  transition: 0.5s;
+  text-transform: uppercase;
+
 }
 
-.btn:hover {
-  background-color: #7a84a5;
+form .btn {
+  border: 1px solid #02568a;
+}
+
+form .btn:hover, form .btn:focus {
+  border: 2px solid #02568a; 
+  padding: .789rem;
 }
 
 .panels-container {
@@ -112,7 +128,17 @@ form {
   grid-template-columns: repeat(2, 1fr);
 }
 
-.container:before {
+.panels-container .btn {
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.panels-container .btn:hover, .panels-container .btn:focus {
+  border: 2px solid #fff; 
+  padding: .789rem;
+}
+
+.contenedor:before {
   content: "";
   position: absolute;
   height: 2000px;
@@ -147,42 +173,32 @@ form {
   font-size: 1.5rem;
 }
 
-.btn.transparent {
-  margin: 0;
-  background: none;
-  border: 2px solid #fff;
-  width: 130px;
-  height: 50px;
-  font-weight: 600;
-  font-size: 0.8rem;
-}
-
 /* ANIMATION */
 
-.container.sign-up-mode:before {
+.contenedor.sign-up-mode:before {
   transform: translate(100%, -50%);
   right: 52%;
 }
 
-.container.sign-up-mode .left-panel .image,
-.container.sign-up-mode .left-panel .content {
+.contenedor.sign-up-mode .left-panel .image,
+.contenedor.sign-up-mode .left-panel .content {
   transform: translateX(-800px);
 }
 
-.container.sign-up-mode .signup {
+.contenedor.sign-up-mode .signup {
   left: 25%;
 }
 
-.container.sign-up-mode .left-panel {
+.contenedor.sign-up-mode .left-panel {
   pointer-events: none;
 }
 
-.container.sign-up-mode .right-panel {
+.contenedor.sign-up-mode .right-panel {
   pointer-events: all;
 }
 
 @media (max-width: 870px) {
-  .container {
+  .contenedor {
     min-height: 800px;
     height: 100vh;
   }
@@ -194,7 +210,7 @@ form {
   }
 
   .signup,
-  .container.sign-up-mode .signup {
+  .contenedor.sign-up-mode .signup {
     left: 50%;
   }
 
@@ -231,7 +247,7 @@ form {
     font-size: 0.7rem;
   }
 
-  .container:before {
+  .contenedor:before {
     width: 1500px;
     height: 1500px;
     transform: translateX(-50%);
@@ -251,16 +267,16 @@ form {
   .panel .content {
     padding: 0.5rem 1rem;
   }
-  .container {
+  .contenedor {
     padding: 1.5rem;
   }
 
-  .container:before {
+  .contenedor:before {
     bottom: 72%;
     left: 50%;
   }
 
-  .container.sign-up-mode:before {
+  .contenedor.sign-up-mode:before {
     bottom: 28%;
     left: 50%;
   }

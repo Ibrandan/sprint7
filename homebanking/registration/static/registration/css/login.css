@@ -41,7 +41,6 @@ input {
 
 form {
   display: flex;
-  align-items: center;
   justify-content: center;
   flex-direction: column;
   padding: 0rem 5rem;
@@ -52,7 +51,7 @@ form {
 }
 
 #figure-logo {
-  width: 40%;
+  width: 30%;
 }
 
 #figure-logo img {
@@ -68,12 +67,6 @@ form.sign-in-form {
   z-index: 2;
 }
 
-.title {
-  font-size: 2.2rem;
-  color: #444;
-  margin-bottom: 10px;
-}
-
 .input-field {
   max-width: 380px;
   width: 100%;
@@ -81,18 +74,9 @@ form.sign-in-form {
   margin: 10px 0;
   height: 55px;
   border-radius: 55px;
-  display: grid;
-  grid-template-columns: 15% 85%;
+  display: flex;
+  flex-direction: column;
   padding: 0 0.4rem;
-  position: relative;
-}
-
-.input-field i {
-  text-align: center;
-  line-height: 55px;
-  color: #acacac;
-  transition: 0.5s;
-  font-size: 1.1rem;
 }
 
 .input-field input {

@@ -7,12 +7,12 @@
       src="https://kit.fontawesome.com/64d58efce2.js"
       crossorigin="anonymous"
     ></script>
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
   <body>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'registration/css/registration.css' %}">
+    <link rel="stylesheet" href="{% static 'registration/css/signup.css' %}">
 
-    <div class="container sign-up-mode">
+    <div class="contenedor sign-up-mode">
       <div class="forms-container">
         <div class="signup">
           <form action="#" method="POST" class="sign-up-form">
@@ -26,7 +26,7 @@
               <img src="{% static 'registration/images/logo_itbank.png' %}" id="logo" alt="Logo de Itbank">
             </figure>
             {% for field in form %}
-            <div class="input-field">
+            <div class="form-group">
               <label for="{{ field.label }}">{{ field.label }}</label>
               {{ field }}
               {% for error in field.errors %}
@@ -34,7 +34,7 @@
               {% endfor %}
             </div>
             {% endfor %} 
-            <input type="submit" class="btn solid" value="Registrarse" />
+            <button type="submit" class="btn">Registrarse</button>
           </form>
         </div>
       </div>
@@ -46,7 +46,7 @@
         <div class="panel right-panel">
           <div class="content">
             <h3>¿Ya eres cliente Itbank?</h3>
-            <a href="{% url 'login' %}" class="btn transparent" id="sign-in-btn">
+            <a href="{% url 'login' %}" class="btn" id="sign-in-btn">
               Inicia sesión
             </a>
           </div>
