@@ -4,10 +4,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-body,
-input {
   font-family: "Poppins", sans-serif;
 }
 
@@ -19,100 +15,86 @@ input {
   overflow: hidden;
 }
 
-.forms-container {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-}
-
 .signin {
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
   left: 75%;
   width: 50%;
-  transition: 1s 0.7s ease-in-out;
-  display: grid;
-  grid-template-columns: 1fr;
   z-index: 5;
 }
 
 form {
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 0rem 5rem;
-  transition: all 0.2s 0.7s;
   overflow: hidden;
   grid-column: 1 / 2;
   grid-row: 1 / 2;
 }
 
+.form-group {
+  max-width: 400px;
+  width: 100%;
+  margin: 10px 0;
+  border-radius: 55px;
+  padding: 0 0.4rem;
+  position: relative;
+  display: flex;
+  flex-direction: column ;
+}
+
+.form-group label {
+  margin-left: 1rem
+}
+
+.form-group label::after {
+  content: ":";
+}
+.form-group input {
+  outline: none;
+  border: none;
+  border-radius: 30px; 
+  font-weight: 600;
+  font-size: 1.1rem;
+  background-color: #f0f0f0;
+  color: #333;
+  padding: 1rem;
+}
+
 #figure-logo {
-  width: 30%;
+  width: 25%;
 }
 
 #figure-logo img {
   width: 100%;
 }
 
-form.sign-up-form {
-  opacity: 0;
-  z-index: 1;
-}
-
-form.sign-in-form {
-  z-index: 2;
-}
-
-.input-field {
-  max-width: 380px;
-  width: 100%;
-  background-color: #f0f0f0;
-  margin: 10px 0;
-  height: 55px;
-  border-radius: 55px;
-  display: flex;
-  flex-direction: column;
-  padding: 0 0.4rem;
-}
-
-.input-field input {
-  background: none;
-  outline: none;
-  border: none;
-  line-height: 1;
-  font-weight: 600;
-  font-size: 1.1rem;
-  color: #333;
-}
-
-.input-field input::placeholder {
-  color: #aaa;
-  font-weight: 500;
-}
-
-
 .btn {
-  width: 150px;
-  background-color: #909cc2;
-  border: none;
+  margin-top: .8rem;
+  width: 250px;
   outline: none;
-  height: 49px;
-  border-radius: 49px;
-  color: #fff;
-  text-transform: uppercase;
+  padding: .8rem;
+  border-radius: 30px;
   font-weight: 600;
-  margin: 10px 0;
-  cursor: pointer;
-  transition: 0.5s;
+  text-transform: uppercase;
 }
 
-.btn:hover {
-  background-color: #7a84a5;
+.signin .btn {
+  border: 1px solid #02568a;
 }
+
+.signin .btn:hover, form .btn:focus {
+  border: 2px solid #02568a; 
+  padding: .789rem;
+}
+
+.btn-mobile {
+  display: none;
+}
+
 .panels-container {
   position: absolute;
   height: 100%;
@@ -121,6 +103,16 @@ form.sign-in-form {
   left: 0;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+}
+
+.panels-container .btn {
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.panels-container .btn:hover, .panels-container .btn:focus {
+  border: 2px solid #fff; 
+  padding: .789rem;
 }
 
 .contenedor:before {
@@ -155,22 +147,45 @@ form.sign-in-form {
   padding: 3rem 12% 2rem 17%;
 }
 
-.panel h3 {
+.panel p {
   color: #fff;
   font-weight: 600;
   line-height: 2;
   font-size: 1.5rem;
 }
 
+@media (max-width: 570px) {
+  .signin {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
-.btn.transparent {
-  margin: 0;
-  background: none;
-  border: 2px solid #fff;
-  width: 130px;
-  height: 41px;
-  font-weight: 600;
-  font-size: 0.8rem;
+  form {
+    padding: 0 1.5rem;
+  }
+
+  .panels-container {
+    display: none;
+  }
+  
+  #figure-logo {
+    width: 50%;
+  }
+
+  .btn-mobile {
+    display: block;
+    margin: 1.4rem auto;
+    background-color: #02568a;
+    color: #fff;
+    border: 1px solid #000;
+  }
+
+  .contenedor:before {
+    display: none;
+  }
 }
 
 @media (max-width: 870px) {
@@ -182,7 +197,7 @@ form.sign-in-form {
     width: 100%;
     top: 95%;
     transform: translate(-50%, -100%);
-    transition: 1s 0.8s ease-in-out;
+    /* transition: 1s 0.8s ease-in-out; */
   }
 
   .signin,
@@ -217,19 +232,8 @@ form.sign-in-form {
     transition-delay: 0.8s;
   }
 
-  .panel h3 {
-    font-size: 1.2rem;
-  }
-
   .panel p {
-    font-size: 0.7rem;
-    padding: 0.5rem 0;
-  }
-
-  .btn.transparent {
-    width: 110px;
-    height: 35px;
-    font-size: 0.7rem;
+    font-size: 1.2rem;
   }
 
   .container:before {
@@ -267,28 +271,5 @@ form.sign-in-form {
   .container.sign-up-mode .signin {
     top: 5%;
     transform: translate(-50%, 0);
-  }
-}
-
-@media (max-width: 570px) {
-  form {
-    padding: 0 1.5rem;
-  }
-  
-  .panel .content {
-    padding: 0.5rem 1rem;
-  }
-  .container {
-    padding: 1.5rem;
-  }
-
-  .container:before {
-    bottom: 72%;
-    left: 50%;
-  }
-
-  .container.sign-up-mode:before {
-    bottom: 28%;
-    left: 50%;
   }
 }

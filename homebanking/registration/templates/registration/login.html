@@ -8,64 +8,41 @@
       crossorigin="anonymous">
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../static/registration/css/login.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'registration/css/login.css' %}">
   </head>
   <body>
-    <!-- {% load static %} -->
-    <link rel="stylesheet" href="{% static 'registration/css/login.css' %}">
 
     <div class="contenedor">
-      <div class="forms-container">
-        <div class="signin">
-          <!-- <form action="#" method="POST" class="sign-in-form">
-            <figure id="figure-logo"> 
-              <img src="{% static 'registration/images/logo_itbank.png' %}" id="logo" alt="Logo de Itbank">
-            </figure>
-            {% if form.errors %}
-              {% for error in form.non_field_errors %}
-                <div class="alert alert-danger">{{error}}</div>
-              {% endfor %}
-            {% endif %}
-            {%csrf_token%}
-            <div class="input-field">
-              <label for="username">Nombre de usuario:</label>
-              <input type="text" placeholder="Nombre de usuario" id="username" name="username"/>
-            </div>
-            <div class="input-field">
-              <label for="password">Contraseña:</label>
-              <input type="password" placeholder="Contraseña" id="password" name="password" />
-            </div>
-            <input type="submit" value="Ingresar" class="btn solid" />
-          </form> -->
-          <form  action="#" method="POST">
-            <figure id="figure-logo"> 
-              <img src="{% static 'registration/images/logo_itbank.png' %}" id="logo" alt="Logo de Itbank">
-            </figure>
-            {% if form.errors %}
-              {% for error in form.non_field_errors %}
-              <div class="alert alert-danger">{{error}}</div>
-              {% endfor %}
-            {% endif %}
-            {%csrf_token%}
-            <div class="form-group">
-              <label for="lbl-username">Nombre de usuario:</label>
-              <input type="text" class="form-control" id="lbl-username" name="username">
-            </div>
-            <div class="form-group">
-              <label for="lbl-password">Contraseña:</label>
-              <input type="password" class="form-control" id="lbl-password" name="password">
-            </div>
-            <button type="submit" class="btn">Ingresar</button>
-          </form>
-        </div>
+      <div class="signin">
+        <form  action="#" method="POST">
+          <figure id="figure-logo"> 
+            <img src="{% static 'registration/images/logo_itbank.png' %}" id="logo" alt="Logo de Itbank">
+          </figure>
+          {% if form.errors %}
+            {% for error in form.non_field_errors %}
+            <div class="alert alert-danger">{{error}}</div>
+            {% endfor %}
+          {% endif %}
+          {%csrf_token%}
+          <div class="form-group">
+            <label for="lbl-username">Nombre de usuario:</label>
+            <input type="text" id="lbl-username" name="username">
+          </div>
+          <div class="form-group">
+            <label for="lbl-password">Contraseña:</label>
+            <input type="password" id="lbl-password" name="password">
+          </div>
+          <button type="submit" class="btn">Ingresar</button>
+        </form>
+        <a href="{% url 'registration:signup' %}" class="btn btn-mobile">Abrir cuenta</a>
       </div>
 
       <div class="panels-container">
         <div class="panel left-panel">
           <div class="content">
-            <h3>¿Aun no eres cliente Itbank?</h3>
-            <a href=" {% url 'registration:signup' %}" class="btn transparent" id="sign-up-btn">
+            <p>¿Aun no eres cliente Itbank?</p>
+            <a href=" {% url 'registration:signup' %}" class="btn" >
               Abrir cuenta
             </a>
           </div>

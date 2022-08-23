@@ -18,7 +18,7 @@
     <div class="sidebar">
       <div class="logo-details">
         <i class='bx bxs-bank'></i>
-        <img src="https://www.itba.edu.ar/intranet/ols/wp-content/uploads/sites/4/2018/08/logo-itba-1080x675.png" alt="">
+        <img src="{% static 'registration/images/logo_itbank.png' %}" alt="">
       </div>
       <ul class="nav-links">
         <li>
@@ -28,21 +28,21 @@
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="{% url 'cuentas:perfil' %}">
             <i class="bx bx-user"></i>
-            <span class="links_name">Perfil</span>
+            <span class="links_name">Mi perfil</span>
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="{% url 'cuentas:fondos' %}">
             <i class="bx bx-wallet-alt"></i>
-            <span class="links_name">Fondos</span>
+            <span class="links_name">Mis fondos</span>
           </a>
         </li>
         <li>
-          <a href="{% url 'tarjetas:tarjetas' %}">
-            <i class="bx bx-credit-card"></i>
-            <span class="links_name">Tarjetas</span>
+          <a href="{% url 'cuentas:actividad' %}">
+            <i class="bx bx-money"></i>
+            <span class="links_name">Actividad</span>
           </a>
         </li>
         <li>
