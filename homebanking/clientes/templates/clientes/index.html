@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-    
     <link rel="stylesheet" href="../../static/clientes/css/index.css">
-<!-- 
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'clientes/css/index.css' %}"> -->
+
+    <!-- {% load static %} -->
+    <link rel="stylesheet" href="{% static 'clientes/css/index.css' %}">
+    <script src="https://kit.fontawesome.com/a8edf64d36.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
 
@@ -20,7 +21,7 @@
             <img src="{% static 'registration/images/logo_itbank.png' %}" alt="">
         </figure>
     </a>
-    <div>
+    <div class="buttons">
         <a href="{% url 'login' %}" class="btn btn-outline-primary">Iniciar sesión</a>
         <a href="{% url 'registration:signup' %}" class="btn btn-primary">Abrir cuenta</a>
     </div>
@@ -29,12 +30,11 @@
     <section id="banner">
         
     </section>
-    <section id="divisas">
+    <section class="divisas">
         <div class="divisas__card">
             <div class="card">
                 <div class="card-body">
                     <div class="divisa">
-                        <img src="" alt="">
                         <h3>Dolar Oficial</h3>
                     </div>
                     <div class="compra-venta">
@@ -49,8 +49,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="divisa">
-                        <img src="" alt="">
-                        <h3>Dolar Oficial</h3>
+                        <h3>Dolar Blue</h3>
                     </div>
                     <div class="compra-venta">
                         <p>Compra:<span></span></p>
@@ -64,8 +63,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="divisa">
-                        <img src="" alt="">
-                        <h3>Dolar Oficial</h3>
+                        <h3>Dolar Bolsa</h3>
                     </div>
                     <div class="compra-venta">
                         <p>Compra:<span></span></p>
@@ -76,74 +74,37 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="divisas__button">
-            <a href="#" class="btn btn-primary">Ver más</a>
+            <div class="mas">
+                <a href="#" title="Ver más divisas"><i href="#" class="bi bi-plus-circle"></i>
+                    <small>Ver más</small>
+                </a>
+            </div>
         </div>
     </section>
     <section class="servicios">
         <div>
-            <figure>
-                <img src="" alt="">
-            </figure>
+            <span><i class="bi bi-arrow-left-right"></i></span>
             <h4>Transferencias</h4>
             <p>Enviá y recibí plata desde cualquier cuenta bancaria y/o virtual, gratis y en el acto.</p>
             <a href="">Ver más</a>
         </div>
         <div>
-            <figure>
-                <img src="" alt="">
-            </figure>
-            <h4>Pagos y recargas</h4>
-            <p>Recargá tus servicios prepagos y pagá tus facturas sin moverte de tu casa.</p>
+            <span><i class="bi bi-credit-card-2-front"></i></span>
+            <h4>Tarjetas</h4>
+            <p>Aprovechá tu tarjeta Itbanky comprá en cualquier comercio o página web del mundo.</p>
             <a href="">Ver más</a>
         </div>
         <div>
-            <figure>
-                <img src="" alt="">
-            </figure>
+            <span><i class="bi bi-cash-stack"></i></span>
             <h4>Prestamos</h4>
             <p>Para lo que necesites, de la forma más fácil, rápida y transparente.</p>
             <a href="">ver más</a>
         </div>
     </section>
-    <section class="servicios2">
-        <div>
-            <figure>
-                <img src="" alt="">
-            </figure>
-            <div class="servicios2__hijo">
-                <h4>Sin comisiones</h4>
-                <p>Podés usar Ualá totalmente gratis. Sin costos de apertura, mantenimiento o cierre.</p>
-            </div>
-        </div>
-        <div>
-            <figure>
-                <img src="" alt="">
-            </figure>
-            <div class="servicios2__hijo">
-                <h4>Sin letra chica</h4>
-                <p>Tranquilidad de saber que todas las operaciones que hagas, están bajo tu control.</p>
-            </div>
-        </div>
-        <div>
-            <figure>
-                <img src="" alt="">
-            </figure>
-            <div class="servicios2__hijo">
-                <h4>Sin sucursales</h4>
-                <p>Todo 100% online. Ahorrá tiempo y comunicate por chat desde donde quieras.</p>
-            </div>
-        </div>
-    </section>
     <section id="ayuda">
-        <h4>
-            Atención 100% online
-        </h4>
+        <h4>Atención 100% online</h4>
         <a href="#" class="btn btn-primary">¿En que podemos ayudarte?</a>
-        <p>Llamá a la línea PayPal para Clientes: 0800-222-0252</p>
-        <button>Registrarse</button>
-        <a href=""><small>Preguntas Frecuentes</small></a>
+        <p>Línea para Clientes: 0800-000-0000</p>
     </section>
 </main>
 <footer>

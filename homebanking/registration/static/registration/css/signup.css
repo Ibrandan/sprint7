@@ -10,9 +10,8 @@
 .contenedor {
   position: relative;
   width: 100%;
-  background-color: #fff;
   min-height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .signup {
@@ -92,7 +91,7 @@ form {
   padding: .789rem;
 }
 
-.btn-mobile {
+.a-mobile {
   display: none;
 }
 
@@ -119,11 +118,8 @@ form {
 .contenedor:before {
   content: "";
   position: absolute;
-  height: 2000px;
+  height: 2200px;
   width: 2000px;
-  top: -10%;
-  right: 48%;
-  transform: translateY(-50%);
   background-color: #909cc2;
   border-radius: 50%;
   z-index: 6;
@@ -138,43 +134,26 @@ form {
   z-index: 6;
 }
 
-.right-panel {
-  pointer-events: none;
-  padding: 3rem 12% 2rem 17%;
-}
-
 .panel p {
   color: #fff;
   font-weight: 600;
-  line-height: 2;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
 }
-
-/* ANIMATION */
 
 .contenedor.sign-up-mode:before {
   transform: translate(100%, -50%);
   right: 52%;
 }
 
-.contenedor.sign-up-mode .left-panel .image,
-.contenedor.sign-up-mode .left-panel .content {
-  transform: translateX(-800px);
-}
-
 .contenedor.sign-up-mode .signup {
   left: 25%;
 }
 
-.contenedor.sign-up-mode .left-panel {
-  pointer-events: none;
-}
-
-.contenedor.sign-up-mode .right-panel {
-  pointer-events: all;
-}
-
 @media (max-width: 570px) {
+
+  .contenedor {
+    position: initial;
+  }
 
   form {
     padding: 0 1.5rem;
@@ -192,12 +171,9 @@ form {
     width: 300px;
   }
 
-  .btn-mobile {
+  .a-mobile {
     display: block;
     margin: 1.4rem auto;
-    background-color: #02568a;
-    color: #fff;
-    border: 1px solid #000;
   }
 
   .contenedor:before {
@@ -209,7 +185,7 @@ form {
 @media (max-width: 1300px) {
   .contenedor {
     min-height: 800px;
-    height: 100vh;
+    height: 100%;
   }
   .signup {
     width: 100%;

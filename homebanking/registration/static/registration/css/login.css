@@ -50,9 +50,6 @@ form {
   margin-left: 1rem
 }
 
-.form-group label::after {
-  content: ":";
-}
 .form-group input {
   outline: none;
   border: none;
@@ -91,7 +88,7 @@ form {
   padding: .789rem;
 }
 
-.btn-mobile {
+.a-mobile {
   display: none;
 }
 
@@ -118,10 +115,10 @@ form {
 .contenedor:before {
   content: "";
   position: absolute;
-  height: 2000px;
+  height: 2200px;
   width: 2000px;
-  top: -10%;
-  right: 48%;
+  top: 0;
+  right: 44%;
   transform: translateY(-50%);
   background-color: #909cc2;
   border-radius: 50%;
@@ -137,21 +134,10 @@ form {
   z-index: 6;
 }
 
-.left-panel {
-  pointer-events: all;
-  padding: 3rem 17% 2rem 12%;
-}
-
-.right-panel {
-  pointer-events: none;
-  padding: 3rem 12% 2rem 17%;
-}
-
 .panel p {
   color: #fff;
   font-weight: 600;
-  line-height: 2;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
 }
 
 @media (max-width: 570px) {
@@ -175,12 +161,9 @@ form {
     width: 50%;
   }
 
-  .btn-mobile {
+  .a-mobile {
     display: block;
     margin: 1.4rem auto;
-    background-color: #02568a;
-    color: #fff;
-    border: 1px solid #000;
   }
 
   .contenedor:before {

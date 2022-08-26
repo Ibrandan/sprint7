@@ -8,8 +8,9 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-    {% load static %}
+    <!-- {% load static %} -->
     <link rel="stylesheet" href="{% static 'registration/css/signup.css' %}">
+    <link rel="stylesheet" href="../../static/registration/css/signup.css">
 
   <body>
     <div class="contenedor sign-up-mode">
@@ -35,7 +36,7 @@
           {% endfor %} 
           <button type="submit" class="btn">Registrarse</button>
         </form>
-        <a href="{% url 'registration:signup' %}" class="btn btn-mobile">Inicia sesión</a>
+        <a href="{% url 'registration:signup' %}" class="a-mobile">¿Ya eres cliente Itbank?, inicia sesión</a>
       </div>
       <div class="panels-container">
         <div class="panel left-panel">
