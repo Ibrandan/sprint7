@@ -8,7 +8,7 @@ class MarcasTarjeta(models.Model):
     type_brand = models.TextField()
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'marcas_tarjeta'
 
 
@@ -24,6 +24,6 @@ class Tarjeta(models.Model):
     client = models.ForeignKey('cuentas.Cliente', models.DO_NOTHING, db_column='client', blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'Tarjeta'
 

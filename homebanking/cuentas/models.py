@@ -4,6 +4,7 @@ from django.contrib.auth.models import AbstractUser
 
 class Cliente(models.Model):
     customer_id = models.AutoField(primary_key=True)
+    customer_username = models.OneToOneField('auth.User', on_delete=models.CASCADE, null=True,blank=True)
     customer_name = models.TextField()
     customer_surname = models.TextField()  # This field type is a guess.
     customer_dni = models.TextField(db_column='customer_DNI', unique=True)  # Field name made lowercase.
@@ -11,8 +12,12 @@ class Cliente(models.Model):
     branch_id = models.IntegerField()
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'cliente'
+    def __str__(self):
+        nombre = self.customer_name + " " + self.customer_surname
+        return nombre
+
 
 
 
@@ -25,7 +30,7 @@ class Movimientos(models.Model):
     hora = models.TextField(blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'movimientos'
 
 class TipoCliente(models.Model):
@@ -33,7 +38,7 @@ class TipoCliente(models.Model):
     type_client = models.TextField()
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'tipo_cliente'
 
 class TipoCuenta(models.Model):
@@ -41,7 +46,7 @@ class TipoCuenta(models.Model):
     type_account = models.TextField()
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'tipo_cuenta'
 
 class Cuenta(models.Model):
@@ -52,7 +57,7 @@ class Cuenta(models.Model):
     account_type = models.ForeignKey('TipoCuenta', models.DO_NOTHING, db_column='account_type', blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'cuenta'
 
 
@@ -65,7 +70,7 @@ class Empleado(models.Model):
     branch_id = models.IntegerField()
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'empleado'
 
 class AuditoriaCuenta(models.Model):
@@ -82,7 +87,7 @@ class AuditoriaCuenta(models.Model):
     created_at = models.TextField()
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'auditoria_cuenta'
 
 class DireccionCliente(models.Model):
@@ -90,7 +95,7 @@ class DireccionCliente(models.Model):
     address_type_client = models.TextField()
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'Direccion_cliente'
 
 class Direccion(models.Model):
@@ -102,7 +107,7 @@ class Direccion(models.Model):
     address_type_required = models.ForeignKey('DireccionCliente', models.DO_NOTHING, db_column='address_type_required', blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'Direccion'
 
 
@@ -113,6 +118,6 @@ class Sucursal(models.Model):
     branch_address_id = models.IntegerField()
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'sucursal'
 

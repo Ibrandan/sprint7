@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'cuentas.apps.CuentasConfig',
     'prestamos.apps.PrestamosConfig',
     'tarjetas.apps.TarjetasConfig',
-    'registration.apps.RegistrationConfig'
+    'registration.apps.RegistrationConfig',
 ]
 
 MIDDLEWARE = [
