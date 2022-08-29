@@ -1,0 +1,64 @@
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0rem 5rem;
+    overflow: hidden;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+  
+  .form-group {
+    max-width: 400px;
+    width: 100%;
+    margin: 10px 0;
+    border-radius: 55px;
+    padding: 0 0.4rem;
+    position: relative;
+    display: flex;
+    flex-direction: column ;
+  }
+  
+  .form-group label {
+    margin-left: 1rem
+  }
+  
+  .form-group input, .form-group select {
+    outline: none;
+    border: none;
+    border-radius: 30px; 
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 1rem;
+  }
+
+  
+  #figure-logo {
+    width: 25%;
+  }
+  
+  #figure-logo img {
+    width: 100%;
+  }
+  
+  .btn {
+    margin-top: .8rem;
+    width: 250px;
+    outline: none;
+    padding: .8rem;
+    border-radius: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  
+  .signin .btn {
+    border: 1px solid #02568a;
+  }
+  
+  .signin .btn:hover, form .btn:focus {
+    border: 2px solid #02568a; 
+    padding: .789rem;
+  }
+  
