@@ -4,7 +4,7 @@ from django.db import models
 
 
 class MarcasTarjeta(models.Model):
-    brand_id = models.TextField(primary_key=True, blank=True)  # This field type is a guess.
+    brand_id = models.TextField(primary_key=True, blank=True)
     type_brand = models.TextField()
 
     class Meta:
