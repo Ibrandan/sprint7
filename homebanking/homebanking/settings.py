@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'prestamos.apps.PrestamosConfig',
     'tarjetas.apps.TarjetasConfig',
     'registration.apps.RegistrationConfig',
+    'api_rest.apps.ApiRestConfig',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -53,6 +55,17 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 5
+}
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ]
+}
 
 ROOT_URLCONF = 'homebanking.urls'
 

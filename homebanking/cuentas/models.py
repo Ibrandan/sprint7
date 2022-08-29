@@ -6,8 +6,8 @@ class Cliente(models.Model):
     customer_id = models.AutoField(primary_key=True)
     customer_username = models.OneToOneField('auth.User', on_delete=models.CASCADE, null=True,blank=True)
     customer_name = models.TextField()
-    customer_surname = models.TextField()  # This field type is a guess.
-    customer_dni = models.TextField(db_column='customer_DNI', unique=True)  # Field name made lowercase.
+    customer_surname = models.TextField()  
+    customer_dni = models.TextField(db_column='customer_DNI', unique=True) 
     dob = models.TextField(blank=True, null=True)
     branch_id = models.IntegerField()
 
@@ -17,8 +17,6 @@ class Cliente(models.Model):
     def __str__(self):
         nombre = self.customer_name + " " + self.customer_surname
         return nombre
-
-
 
 
 
@@ -34,7 +32,7 @@ class Movimientos(models.Model):
         db_table = 'movimientos'
 
 class TipoCliente(models.Model):
-    client_id = models.TextField(primary_key=True, blank=True)  # This field type is a guess.
+    client_id = models.TextField(primary_key=True, blank=True)  
     type_client = models.TextField()
 
     class Meta:
@@ -42,7 +40,7 @@ class TipoCliente(models.Model):
         db_table = 'tipo_cliente'
 
 class TipoCuenta(models.Model):
-    type_id = models.TextField(primary_key=True, blank=True)  # This field type is a guess.
+    type_id = models.TextField(primary_key=True, blank=True)  
     type_account = models.TextField()
 
     class Meta:
@@ -66,7 +64,7 @@ class Empleado(models.Model):
     employee_name = models.TextField()
     employee_surname = models.TextField()
     employee_hire_date = models.TextField()
-    employee_dni = models.TextField(db_column='employee_DNI')  # Field name made lowercase.
+    employee_dni = models.TextField(db_column='employee_DNI')  
     branch_id = models.IntegerField()
 
     class Meta:
@@ -91,7 +89,7 @@ class AuditoriaCuenta(models.Model):
         db_table = 'auditoria_cuenta'
 
 class DireccionCliente(models.Model):
-    address_client_id = models.TextField(primary_key=True, blank=True)  # This field type is a guess.
+    address_client_id = models.TextField(primary_key=True, blank=True) 
     address_type_client = models.TextField()
 
     class Meta:
