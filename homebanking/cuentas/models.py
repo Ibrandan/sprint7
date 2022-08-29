@@ -40,12 +40,24 @@ class TipoCliente(models.Model):
         db_table = 'tipo_cliente'
 
 class TipoCuenta(models.Model):
-    type_id = models.TextField(primary_key=True, blank=True)  
-    type_account = models.TextField()
+    type_id = models.AutoField(primary_key=True)  
+    type_name = models.TextField(null=False)
+    type_savings_usd = models.BooleanField('Caja de ahorro en dolares',null=False)
+    type_max_with = models.IntegerField('Retiro diario maximo',null=False)
+    type_commissions = models.FloatField('Porcentaje de comision (%)')
+    type_max_cc = models.IntegerField('Tarjetas de credito maximas',null=False)
+    type_max_dc = models.IntegerField('Tarjetas de debito maximas',null=False)
+    type_max_check = models.IntegerField('Chequeras maximas')
+    type_max_deposit = models.IntegerField('Depositos maximos sin previo aviso',blank=True,null=True)
+    type_overdraft = models.FloatField('Descubierto',null=False)
+    type_prestamos = models.FloatField('Prestamos pre aprobados')
+
 
     class Meta:
         managed = True
         db_table = 'tipo_cuenta'
+    def __str__(self):
+        return self.type_name
 
 class Cuenta(models.Model):
     account_id = models.AutoField(primary_key=True)

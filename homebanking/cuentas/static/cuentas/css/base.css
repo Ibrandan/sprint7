@@ -38,7 +38,7 @@
   position: fixed;
   height: 100%;
   width: 280px;
-  background: #909CC2;
+  background: #0A2558;
   transition: all 0.5s ease;
 }
 
@@ -273,6 +273,9 @@ nav .sidebar-button i {
 }
 
 /* seccion divisas */
+.bx-down-arrow-alt {
+  color: red;
+}
 
 .home-content .overview-boxes {
   width: 38%;
