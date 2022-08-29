@@ -21,7 +21,7 @@
   width: 50%;
   display: grid;
   grid-template-columns: 1fr;
-  z-index: 5;
+
 }
 
 form {
@@ -104,7 +104,6 @@ form {
   left: 0;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  z-index: 1;
 }
 
 .panels-container .btn {
@@ -125,7 +124,6 @@ form {
   width: 2000px;
   background-color: #909cc2;
   border-radius: 50%;
-  z-index: 6;
 }
 
 .panel {
@@ -134,7 +132,6 @@ form {
   align-items: center;
   justify-content: center;
   text-align: center;
-  z-index: 6;
 }
 
 .panel p {
@@ -218,6 +215,7 @@ form {
 
   .right-panel {
     grid-row: 3 / 4;
+
   }
 
   .panel .content {

@@ -27,7 +27,7 @@ header {
     width: 12%;
     margin: 0;
 }
-  
+
 #figure-logo img {
     width: 100%;
 }
@@ -37,7 +37,7 @@ header {
     flex-direction: row;
     gap: 1rem;
 }
-  
+
 
 main {
     background-color: #fff;
@@ -63,12 +63,17 @@ main {
 }
 
 @keyframes typing {
-    from {width: 0}
+    from {
+        width: 0
+    }
 }
 
 @keyframes blink {
-    50% {border-color: transparent}
+    50% {
+        border-color: transparent
+    }
 }
+
 .divisas {
     display: flex;
     flex-direction: column;
@@ -143,7 +148,7 @@ main {
     border-radius: 50%;
 }
 
-.servicios h4 { 
+.servicios h4 {
     margin-top: 1rem;
 }
 
@@ -184,17 +189,21 @@ footer .bi {
     .banner {
         height: 50vh;
     }
+
     .banner h1 {
         font-size: 4rem;
     }
+
     .card {
         width: 350px;
         height: 180px;
     }
-    .card h3{
+
+    .card h3 {
         font-size: 1.3rem;
     }
-    .card p{
+
+    .card p {
         font-size: .9rem;
     }
 }
@@ -203,14 +212,17 @@ footer .bi {
     .banner {
         height: 60vh;
     }
+
     .card {
         width: 400px;
         height: 190px;
     }
-    .card h3{
+
+    .card h3 {
         font-size: 1.6rem;
     }
-    .card p{
+
+    .card p {
         font-size: 1rem;
     }
 }
