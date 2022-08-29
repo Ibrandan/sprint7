@@ -42,7 +42,7 @@ form {
   padding: 0 0.4rem;
   position: relative;
   display: flex;
-  flex-direction: column ;
+  flex-direction: column;
 }
 
 .form-group label {
@@ -56,7 +56,7 @@ form {
 .form-group input {
   outline: none;
   border: none;
-  border-radius: 30px; 
+  border-radius: 30px;
   font-weight: 600;
   font-size: 1.1rem;
   background-color: #f0f0f0;
@@ -86,8 +86,9 @@ form {
   border: 1px solid #02568a;
 }
 
-.signup .btn:hover, .signin.btn:focus {
-  border: 2px solid #02568a; 
+.signup .btn:hover,
+.signin.btn:focus {
+  border: 2px solid #02568a;
   padding: .789rem;
 }
 
@@ -103,6 +104,7 @@ form {
   left: 0;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  z-index: 1;
 }
 
 .panels-container .btn {
@@ -110,8 +112,9 @@ form {
   color: #fff;
 }
 
-.panels-container .btn:hover, .panels-container .btn:focus {
-  border: 2px solid #fff; 
+.panels-container .btn:hover,
+.panels-container .btn:focus {
+  border: 2px solid #fff;
   padding: .789rem;
 }
 
@@ -162,7 +165,7 @@ form {
   .panels-container {
     display: none;
   }
-  
+
   #figure-logo {
     width: 50%;
   }
@@ -187,6 +190,7 @@ form {
     min-height: 800px;
     height: 100%;
   }
+
   .signup {
     width: 100%;
     top: 95%;
