@@ -8,7 +8,7 @@
       <div class="top-sales box">
         <div class="fondos">
           <h2>Dinero Disponible</h2>
-          <p>$0</p>
+          <p>${{cash.balance}}</p>
           <br><br>
         </div>
         <div class="botones">
@@ -29,6 +29,17 @@
           </tr>
         </thead>
         <tbody>
+          {% for x in transactions %}
+          <tr>
+            <td>{{x.reason}}</td>
+            <td>{{x.operation_type}}</td>
+            <td>{{x.status}}</td>
+            <td>{{x.date}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <!-- 
           <tr>
             <td>Pasajes en Aerolineas Argentinas</td>
             <td>Compra</td>
@@ -59,8 +70,7 @@
             <td>Aprobado</td>
             <td>10/08/2022</td>
           </tr>
-        </tbody>
-      </table>
+         -->
       <div class="container-button">
         <a class="button" href="#">Ver más</a>
       </div>
