@@ -2,7 +2,7 @@ from django.views import generic
 from django.urls import reverse_lazy, reverse
 from django.contrib.auth import authenticate, login
 from django.http import HttpResponseRedirect
-from .forms import CustomRegistrationForm
+from .forms import CustomRegistrationForm, ClienteForm
 
 
 class SignUp(generic.CreateView):
@@ -16,3 +16,8 @@ class SignUp(generic.CreateView):
         new_user = authenticate(username=username, password=password)
         login(self.request, new_user)
         return HttpResponseRedirect(reverse('cuentas:cuenta'))
+
+class ClienteRegistration(generic.CreateView):
+    form_class = ClienteForm
+    success_url = reverse_lazy('registration:signup')
+    template_name = 'registration/registro_cliente.html'

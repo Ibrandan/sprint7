@@ -10,7 +10,7 @@
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="stylesheet" href="../../static/clientes/css/index.css">
 
-    <!-- {% load static %} -->
+    {% load static %}
     <link rel="stylesheet" href="{% static 'clientes/css/index.css' %}">
     <script src="https://kit.fontawesome.com/a8edf64d36.js" crossorigin="anonymous"></script>
 
@@ -35,11 +35,7 @@
     </header>
     <main>
         <section class="banner">
-            {% if user.is_authenticated %}
-            <h1>Hola, {{ user.username }}.</h1>{%else%}
             <h1>Bienvenido/a a Itbank!</h1>
-            {% endif %}
-
         </section>
         <section class="divisas">
             <div class="divisas__card" id="divisas">
@@ -86,7 +82,7 @@
                     </div>
                 </div>
                 <div class="mas">
-                    <a href="#" title="Ver más divisas"><i href="#" class="bi bi-plus-circle"></i>
+                    <a href="{% url 'clientes:divisas' %}" title="Ver más divisas"><i class="bi bi-plus-circle"></i>
                         <small>Ver más</small>
                     </a>
                 </div>
@@ -114,7 +110,7 @@
         </section>
         <section id="ayuda">
             <h4>Atención 100% online</h4>
-            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn btn-primary">¿En que podemos ayudarte?</a>
+            <a href="{% url 'clientes:ayuda' %}" class="btn btn-primary">¿En que podemos ayudarte?</a>
             <p>Línea para Clientes: 0800-000-0000</p>
         </section>
     </main>

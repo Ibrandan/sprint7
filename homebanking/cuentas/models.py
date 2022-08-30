@@ -1,3 +1,4 @@
+from asyncio.windows_events import NULL
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 # Create your models here.
@@ -7,9 +8,9 @@ class Cliente(models.Model):
     customer_username = models.OneToOneField('auth.User', on_delete=models.CASCADE, null=True,blank=True)
     customer_name = models.TextField()
     customer_surname = models.TextField()  
-    customer_dni = models.TextField(db_column='customer_DNI', unique=True) 
+    customer_dni = models.TextField(db_column='customer_DNI') #unique=True
     dob = models.TextField(blank=True, null=True)
-    branch_id = models.IntegerField()
+    branch_id = models.IntegerField(null=True, blank=True)
 
     class Meta:
         managed = True
