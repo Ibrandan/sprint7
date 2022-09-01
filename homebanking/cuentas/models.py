@@ -10,7 +10,7 @@ class Cliente(models.Model):
         'auth.User', on_delete=models.CASCADE, null=True, blank=True)
     customer_name = models.TextField()
     customer_surname = models.TextField()
-    customer_dni = models.TextField(db_column='customer_DNI')  # unique=True
+    customer_dni = models.TextField(db_column='customer_DNI', unique=True)
     dob = models.TextField(blank=True, null=True)
     branch_id = models.IntegerField(null=True, blank=True)
 
@@ -25,7 +25,8 @@ class Cliente(models.Model):
 
 class Movimientos(models.Model):
     movement_id = models.AutoField(primary_key=True, blank=True)
-    account_number = models.ForeignKey(Cliente, on_delete=models.CASCADE)
+    account_number = models.ForeignKey(
+        default=1, on_delete=models.CASCADE, to='cuentas.cliente')
     amount = models.FloatField(blank=True, null=True)
     reason = models.TextField(blank=True, null=True)
     operation_type = models.TextField(blank=True, null=True)
@@ -48,19 +49,20 @@ class TipoCliente(models.Model):
 
 class TipoCuenta(models.Model):
     type_id = models.AutoField(primary_key=True)
-    type_name = models.TextField(null=False)
+    type_account = models.TextField()
+    type_name = models.TextField(null=True)
     type_savings_usd = models.BooleanField(
-        'Caja de ahorro en dolares', null=False)
-    type_max_with = models.IntegerField('Retiro diario maximo', null=False)
-    type_commissions = models.FloatField('Porcentaje de comision (%)')
-    type_max_cc = models.IntegerField(
-        'Tarjetas de credito maximas', null=False)
-    type_max_dc = models.IntegerField('Tarjetas de debito maximas', null=False)
-    type_max_check = models.IntegerField('Chequeras maximas')
+        'Caja de ahorro en dolares', null=True)
+    type_max_with = models.IntegerField('Retiro diario maximo', null=True)
+    type_commissions = models.FloatField(
+        'Porcentaje de comision (%)', null=True)
+    type_max_cc = models.IntegerField('Tarjetas de credito maximas', null=True)
+    type_max_dc = models.IntegerField('Tarjetas de debito maximas', null=True)
+    type_max_check = models.IntegerField('Chequeras maximas', null=True)
     type_max_deposit = models.IntegerField(
         'Depositos maximos sin previo aviso', blank=True, null=True)
-    type_overdraft = models.FloatField('Descubierto', null=False)
-    type_prestamos = models.FloatField('Prestamos pre aprobados')
+    type_overdraft = models.FloatField('Descubierto', null=True)
+    type_prestamos = models.FloatField('Prestamos pre aprobados', null=True)
 
     class Meta:
         managed = True

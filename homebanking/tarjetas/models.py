@@ -1,4 +1,5 @@
 from django.db import models
+from cuentas.models import Cliente
 
 # Create your models here.
 
@@ -21,7 +22,7 @@ class Tarjeta(models.Model):
     card_expiration = models.TextField(blank=True, null=True)
     card_type = models.TextField(blank=True, null=True)
     card_brand = models.ForeignKey('MarcasTarjeta', models.DO_NOTHING, db_column='card_brand', blank=True, null=True)
-    client = models.ForeignKey('cuentas.Cliente', models.DO_NOTHING, db_column='client', blank=True, null=True)
+    client = models.ForeignKey(Cliente, models.DO_NOTHING, db_column='client', blank=True, null=True)
 
     class Meta:
         managed = True

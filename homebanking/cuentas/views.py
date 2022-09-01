@@ -8,6 +8,8 @@ from .models import *
 from django.shortcuts import render
 from .forms import InputForm
 
+from cuentas.models import Cliente
+
 
 def CuentaView(request):
     username = Cliente.objects.all().filter(customer_username=request.user).first()
