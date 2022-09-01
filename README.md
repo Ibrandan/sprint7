@@ -24,9 +24,7 @@
 
 ## TODO
 
--Que el usuario acceda a la pagina y le muestre las transferencias
 -La pestaña de novedades
 -Transferencias (que pueda recibir y enviar plata)
 -Prestamos
--Que se linkee el username con la base de datos
 -integrar la DB con el front
