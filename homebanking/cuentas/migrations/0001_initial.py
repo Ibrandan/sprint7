@@ -128,7 +128,6 @@ class Migration(migrations.Migration):
             name='Cuenta',
             fields=[
                 ('account_id', models.AutoField(primary_key=True, serialize=False)),
-                ('customer_id', models.IntegerField()),
                 ('balance', models.IntegerField()),
                 ('iban', models.TextField()),
                 ('account_type', models.ForeignKey(blank=True, db_column='account_type', null=True, on_delete=django.db.models.deletion.DO_NOTHING, to='cuentas.tipocuenta')),

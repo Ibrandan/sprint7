@@ -39,20 +39,10 @@ class Movimientos(models.Model):
 
 
 class TipoCliente(models.Model):
-    client_id = models.TextField(primary_key=True, blank=True)
+    client_id = models.AutoField(primary_key=True)
     type_client = models.TextField()
-
-    class Meta:
-        managed = True
-        db_table = 'tipo_cliente'
-
-
-class TipoCuenta(models.Model):
-    type_id = models.AutoField(primary_key=True)
-    type_account = models.TextField()
-    type_name = models.TextField(null=True)
     type_savings_usd = models.BooleanField(
-        'Caja de ahorro en dolares', null=True)
+        'Caja de ahorro en dolares', default=False)
     type_max_with = models.IntegerField('Retiro diario maximo', null=True)
     type_commissions = models.FloatField(
         'Porcentaje de comision (%)', null=True)
@@ -66,6 +56,18 @@ class TipoCuenta(models.Model):
 
     class Meta:
         managed = True
+        db_table = 'tipo_cliente'
+    def __str__(self):
+        return self.type_client
+
+
+class TipoCuenta(models.Model):
+    type_id = models.AutoField(primary_key=True)
+    type_name = models.TextField()
+
+
+    class Meta:
+        managed = True
         db_table = 'tipo_cuenta'
 
     def __str__(self):
@@ -74,15 +76,18 @@ class TipoCuenta(models.Model):
 
 class Cuenta(models.Model):
     account_id = models.AutoField(primary_key=True)
-    customer_id = models.ForeignKey(Cliente, on_delete=models.CASCADE)
+    customer = models.ForeignKey(Cliente, on_delete=models.CASCADE)
     balance = models.IntegerField()
     iban = models.TextField()
     account_type = models.ForeignKey(
-        'TipoCuenta', models.DO_NOTHING, db_column='account_type', blank=True, null=True)
+        TipoCuenta, models.DO_NOTHING)
 
     class Meta:
         managed = True
         db_table = 'cuenta'
+    def __str__(self):
+        texto = str(self.account_type) + " de " + str(self.customer)
+        return texto
 
 
 class Empleado(models.Model):

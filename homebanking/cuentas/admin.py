@@ -5,5 +5,6 @@ from .models import *
 admin.site.register(Cliente)
 admin.site.register(Movimientos)
 admin.site.register(Cuenta)
-admin.site.register(Empleado)
-admin.site.register(TipoCuenta)
+admin.site.register(TipoCliente)
+
+
