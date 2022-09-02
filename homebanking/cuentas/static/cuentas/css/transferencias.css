@@ -1,66 +1,53 @@
-.contenedor-prestamos {
+.transferencias {
     width: 100%;
     display: flex;
+    flex-direction: row;
     justify-content: center;
 }
 
-.prestamos {
+.transferencias h2 {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+
+.contenedor-form {
     width: 60%;
     height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: #fff;
     box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
-    border-radius: 20px;   
+    border-radius: 20px;
 }
-
-.prestamos h2 {
-    margin-top: 1rem;
-    padding: 1rem;
-    font-size: 1.5rem;
-    text-align: center;
-}
-
-
 
 form {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-
 }
 
-.radio {
-    margin: 1rem;
-}
-
-.radio p {
-    font-size: 1.2rem;
-    text-align: center;
-}
-
-.radio div {
-    margin-top: .5rem;
-    display: flex;
-    gap: 1rem;
-}
-
-.monto {
+form div {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
 }
 
-.monto label {
-    font-size: 1.2rem;
+label {
+    font-size: 1.1rem;
+    margin: 0.8rem;
 }
-
-.monto input {
+  
+input {
     width: 300px;
-    text-align: center;
-    padding: 1rem 0;
+    font-size: 1.3rem;
+    height: 50px;
     border-radius: 30px;
+    text-align: center;
     border: 1px solid #02568a;
+
 }
 
   

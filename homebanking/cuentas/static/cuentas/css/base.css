@@ -32,8 +32,6 @@
   font-family: 'Poppins', sans-serif;
 }
 
-
-
 .sidebar {
   position: fixed;
   height: 100%;
@@ -188,21 +186,18 @@ nav .sidebar-button i {
 }
 
 .button {
-  width: 40%;
-  padding: 1.2rem;
-  color: #fff;
-  background: #0A2558;
-  padding: 4px 12px;
-  font-size: 15px;
-  font-weight: 400;
-  border-radius: 4px;
+  padding: .6rem 1.2rem;
+  color: #0A2558;
+  border: 1px solid #0A2558;
+  font-size: .85rem;
+  border-radius: 10px;
   text-decoration: none;
   transition: all 0.3s ease;
   text-align: center;
 }
 
 .button:hover {
-  background: #0d3073;
+  border: 2px solid #0A2558;
 }
 
 /* Tabla de movimientos */
@@ -214,6 +209,12 @@ nav .sidebar-button i {
   margin: 0 20px;
   border-radius: 12px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  max-height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .movimientos h2 {
@@ -228,6 +229,7 @@ nav .sidebar-button i {
   text-align: center;
   box-shadow: var(--box-shadow);
   transition: box-shadow 300ms ease;
+  margin: 1.2rem 0;
 }
 
 .movimientos table:hover {
@@ -255,7 +257,7 @@ nav .sidebar-button i {
 }
 
 .movimientos .button {
-  width: 20%;
+  width: 200px;
 }
 
 /* novedades */
@@ -317,17 +319,11 @@ nav .sidebar-button i {
 .home-content .box .indicator i {
   height: 20px;
   width: 20px;
-  background: #8FDACB;
   line-height: 20px;
   text-align: center;
   border-radius: 50%;
-  color: #fff;
   font-size: 20px;
   margin-right: 5px;
-}
-
-.box .indicator i.down {
-  background: #e87d88;
 }
 
 .home-content .box .indicator .text {
@@ -343,7 +339,7 @@ nav .sidebar-button i {
   line-height: 50px;
   text-align: center;
   color: #0b641a;
-  border-radius: 12px;
+  border-radius: 50%;
   margin-right: 10px;
 }
 
@@ -427,4 +423,13 @@ nav .sidebar-button i {
     width: calc(100% - 220px);
     left: 220px;
   }
+}
+
+
+.positivo {
+  color: green;
+}
+
+.negativo {
+  color: red;
 }
