@@ -6,5 +6,4 @@ admin.site.register(Cliente)
 admin.site.register(Movimientos)
 admin.site.register(Cuenta)
 admin.site.register(TipoCliente)
-
-
+admin.site.register(TipoCuenta)

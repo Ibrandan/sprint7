@@ -22,6 +22,7 @@
       <table>
         <thead>
           <tr>
+            <th>Monto</th>
             <th>Operacion</th>
             <th>Tipo de Operacion</th>
             <th>Estado</th>
@@ -31,6 +32,7 @@
         <tbody>
           {% for x in transactions %}
           <tr>
+            <td>{{x.amount}}</td>
             <td>{{x.reason}}</td>
             <td>{{x.operation_type}}</td>
             <td>{{x.status}}</td>

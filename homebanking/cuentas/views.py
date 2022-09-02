@@ -16,7 +16,10 @@ def CuentaView(request):
 
     transactions = Movimientos.objects.all().filter(
         account_number=username.customer_id).order_by('-date')
-    cash = Cuenta.objects.filter(account_id=username.customer_id).first()
+    for texto in Cuenta.objects.all():
+        if texto.customer_id == username.customer_id:
+            print('yay')
+    cash = Cuenta.objects.filter(customer_id=username.customer_id).first()
 
     return render(request, 'cuentas/cuenta.html',
                   {'transactions': transactions, 'cash': cash})
@@ -45,12 +48,40 @@ def TransferenciaView(request):
             monto = form.cleaned_data['monto']
             motivo = form.cleaned_data['motivo']
             destinatario = form.cleaned_data['destinatario']
+            username = Cliente.objects.all().filter(customer_username=request.user).first()
+            cash = Cuenta.objects.filter(
+                customer_id=username.customer_id).first().balance
+
             try:
                 dest = Cliente.objects.all().filter(
                     customer_id=int(destinatario)).first()
-                p = Movimientos(account_number=dest, amount=monto, reason=motivo,
-                                status="ACEPTADO", date=datetime.now(), operation_type="Transferencia")
-                p.save()
+                print(cash, monto, float(cash) > float(monto), username, dest)
+                if float(cash) > float(monto) and float(monto) > 0:
+                    print("asds")
+                    if username != dest:
+                        print("asds")
+                        out = Movimientos(account_number=dest, amount=monto, reason=motivo,
+                                          status="Recibido", date=datetime.now(), operation_type="Transferencia")
+                        inp = Movimientos(account_number=username, amount=monto, reason=motivo,
+                                          status="Enviado", date=datetime.now(), operation_type="Transferencia")
+                        out.save()
+                        inp.save()
+                        sender = Cuenta.objects.filter(
+                            customer_id=username.customer_id).first()
+                        sender.balance -= monto
+                        reciever = Cuenta.objects.filter(
+                            customer_id=dest).first()
+                        reciever.balance += monto
+                        sender.save()
+                        reciever.save()
+
+                    else:
+                        context['error'] = 'No podes transferirte a vos mismo'
+                        print('err')
+
+                else:
+                    print("as")
+                    context['error'] = 'No tenes saldo suficiente'
             except IntegrityError:
                 context['error'] = f'No existe el usuario {destinatario}'
 
