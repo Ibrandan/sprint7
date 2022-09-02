@@ -1,4 +1,5 @@
 from asyncio.windows_events import NULL
+from tkinter import CASCADE
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 # Create your models here.
@@ -7,7 +8,7 @@ from django.contrib.auth.models import AbstractUser
 class Cliente(models.Model):
     customer_id = models.AutoField(primary_key=True)
     customer_username = models.OneToOneField(
-        'auth.User', on_delete=models.CASCADE, null=True, blank=True)
+        'auth.User',models.CASCADE, null=True, blank=True)
     customer_name = models.TextField()
     customer_surname = models.TextField()
     customer_dni = models.TextField(db_column='customer_DNI', unique=True)
@@ -25,8 +26,8 @@ class Cliente(models.Model):
 
 class Movimientos(models.Model):
     movement_id = models.AutoField(primary_key=True, blank=True)
-    account_number = models.ForeignKey(
-        default=1, on_delete=models.CASCADE, to='cuentas.cliente')
+    account_number = models.ForeignKey(Cliente, models.CASCADE,
+        default=1)
     amount = models.FloatField(blank=True, null=True)
     reason = models.TextField(blank=True, null=True)
     operation_type = models.TextField(blank=True, null=True)
@@ -76,11 +77,11 @@ class TipoCuenta(models.Model):
 
 class Cuenta(models.Model):
     account_id = models.AutoField(primary_key=True)
-    customer = models.ForeignKey(Cliente, on_delete=models.CASCADE)
+    customer = models.ForeignKey(Cliente, models.CASCADE)
     balance = models.IntegerField()
     iban = models.TextField()
     account_type = models.ForeignKey(
-        TipoCuenta, models.DO_NOTHING)
+        TipoCuenta, models.CASCADE)
 
     class Meta:
         managed = True
@@ -138,7 +139,7 @@ class Direccion(models.Model):
     address_city = models.TextField()
     address_country = models.TextField()
     address_type_required = models.ForeignKey(
-        'DireccionCliente', models.DO_NOTHING, db_column='address_type_required', blank=True, null=True)
+        'DireccionCliente', models.CASCADE, db_column='address_type_required', blank=True, null=True)
 
     class Meta:
         managed = True
