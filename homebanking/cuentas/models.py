@@ -12,7 +12,7 @@ class Cliente(models.Model):
     customer_name = models.TextField()
     customer_surname = models.TextField()
     customer_dni = models.TextField(db_column='customer_DNI', unique=True)
-    dob = models.TextField(blank=True, null=True)
+    dob = models.DateField(blank=True, null=True)
     branch_id = models.IntegerField(null=True, blank=True)
 
     class Meta:
@@ -58,6 +58,7 @@ class TipoCliente(models.Model):
     class Meta:
         managed = True
         db_table = 'tipo_cliente'
+
     def __str__(self):
         return self.type_client
 
@@ -65,7 +66,6 @@ class TipoCliente(models.Model):
 class TipoCuenta(models.Model):
     type_id = models.AutoField(primary_key=True)
     type_name = models.TextField()
-
 
     class Meta:
         managed = True
@@ -86,6 +86,7 @@ class Cuenta(models.Model):
     class Meta:
         managed = True
         db_table = 'cuenta'
+
     def __str__(self):
         texto = str(self.account_type) + " de " + str(self.customer)
         return texto
