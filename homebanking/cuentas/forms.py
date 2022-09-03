@@ -4,7 +4,6 @@ from django import forms
 
 
 class InputForm(forms.Form):
-
-    motivo = forms.CharField()
     monto = forms.FloatField()
     destinatario = forms.CharField()
+    motivo = forms.CharField()

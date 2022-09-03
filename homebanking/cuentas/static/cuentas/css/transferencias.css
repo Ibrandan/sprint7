@@ -25,11 +25,10 @@
 form {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 1rem;
+    gap: .6rem;
 }
 
-form div {
+form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -37,26 +36,25 @@ form div {
 
 label {
     font-size: 1.1rem;
-    margin: 0.8rem;
+    margin: 0.5rem;
 }
   
 input {
     width: 300px;
-    font-size: 1.3rem;
+    font-size: 1.2srem;
     height: 50px;
-    border-radius: 30px;
+    border-radius: 10px;
     text-align: center;
     border: 1px solid #02568a;
 
 }
-
   
 .btn {
     margin-top: 1rem;
-    width: 300px;
+    width: 180px;
     outline: none;
-    padding: .9rem;
-    border-radius: 30px;
+    padding: .8rem;
+    border-radius: 10px;
     font-weight: 600;
     text-transform: uppercase;
 }
