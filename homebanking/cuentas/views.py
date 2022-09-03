@@ -15,7 +15,7 @@ def CuentaView(request):
     username = Cliente.objects.all().filter(customer_username=request.user).first()
 
     transactions = Movimientos.objects.all().filter(
-        account_number=username.customer_id).order_by('-date')
+        account_number=username.customer_id).order_by('-date')[:7]
     for texto in Cuenta.objects.all():
         if texto.customer_id == username.customer_id:
             print('yay')
