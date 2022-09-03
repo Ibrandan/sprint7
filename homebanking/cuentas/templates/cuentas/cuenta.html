@@ -2,17 +2,18 @@
 {% load static %}
 
 {% block content %}
+<link rel="stylesheet" href="{% static 'cuentas/css/cuenta.css' %}">
+
 <div class="home-content">
   <div class="sales-boxes">
     <div class="top-sales-flex">
       <div class="top-sales box">
         <div class="fondos">
           <h2>Dinero Disponible</h2>
-          <p>${{cash.balance}}</p>
-          <br><br>
+          <p class="balance">${{cash.balance}}</p>
         </div>
         <div class="botones">
-          <a class="button" href="#">Ingresar dinero</a>
+          <a class="button" href="{% url 'cuentas:perfil' %}">Ingresar dinero</a>
           <a class="button" href="{% url 'cuentas:transferencia' %}">Transferir dinero</a>
         </div>
       </div>
@@ -41,109 +42,12 @@
           {% endfor %}
         </tbody>
       </table>
-      <!-- 
-          <tr>
-            <td>Pasajes en Aerolineas Argentinas</td>
-            <td>Compra</td>
-            <td>Pendiente</td>
-            <td>10/08/2022</td>
-          </tr>
-          <tr>
-            <td>Compra de Prueba en Uber</td>
-            <td>Compra</td>
-            <td>Devuelto</td>
-            <td>10/08/2022</td>
-          </tr>
-          <tr>
-            <td>Transferiste a</td>
-            <td>Transferencia</td>
-            <td>Pendiente</td>
-            <td>10/08/2022</td>
-          </tr>
-          <tr>
-            <td>Recargaste SUBE</td>
-            <td>Pago de servicio</td>
-            <td>Aprobado</td>
-            <td>10/08/2022</td>
-          </tr>
-          <tr>
-            <td>Pagaste Internet Fibra optica</td>
-            <td>Pago de servicio</td>
-            <td>Aprobado</td>
-            <td>10/08/2022</td>
-          </tr>
-         -->
-      <div class="container-button">
+      <div>
         <a class="button" href="{% url 'cuentas:actividad' %}">Ver más</a>
       </div>
     </div>
   </div>
-  <div class="overview-boxes" id="extra-info">
-    <div class="box">
-      <div class="right-side title">
-        <h2>Novedades</h2>
-        <div class="novedad">
-          <div class="novedad__img">
-            <img src="" alt="">
-          </div>
-          <div class="mensaje">
-            <p>Su transferencia ha sido enviada con exito</p>
-            <small>Hace 1 hora</small>
-          </div>
-        </div>
-        <div class="novedad">
-          <div class="novedad__img">
-            <img src="" alt="">
-          </div>
-          <div class="mensaje">
-            <p>Itbank ha lanzado nuevos prestamos</p>
-            <small>Lunes 8 de agosto de 2022</small>
-          </div>
-        </div>
-        <div class="novedad">
-          <div class="novedad__img">
-            <img src="" alt="">
-          </div>
-          <div class="mensaje">
-            <p>Itbank incluyo una nueva linea de tarjetas llamada black card</p>
-            <small>Jueves 4 de agosto de 2022</small>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="box">
-      <i class="bx bx-money money"></i>
-      <div class="right-side">
-        <div class="box-topic">Dolar Oficial</div>
-        <div class="number">$140,00</div>
-        <div class="indicator">
-          <i class="bx bx-up-arrow-alt"></i>
-          <span class="text">Up from yesterday</span>
-        </div>
-      </div>
-    </div>
-    <div class="box">
-      <i class="bx bx-money money"></i>
-      <div class="right-side">
-        <div class="box-topic">Dolar Blue</div>
-        <div class="number">$295,00</div>
-        <div class="indicator">
-          <i class="bx bx-up-arrow-alt"></i>
-          <span class="text">Up from yesterday</span>
-        </div>
-      </div>
-    </div>
-    <div class="box">
-      <i class="bx bx-money money blue"></i>
-      <div class="right-side">
-        <div class="box-topic">Dolar bolsa</div>
-        <div class="number">$292,00</div>
-        <div class="indicator">
-          <i class="bx bx-up-arrow-alt"></i>
-          <span class="text">Up from yesterday</span>
-        </div>
-      </div>
-    </div>
+  <div id="extra-info">
   </div>
 </div>
 <script src="{% static 'cuentas/js/extraInfo.js' %}"></script>

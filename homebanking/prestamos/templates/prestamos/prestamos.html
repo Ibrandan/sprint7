@@ -2,25 +2,42 @@
 {% load static %}
 
 {% block content %}
+<link rel="stylesheet" href="{% static 'prestamos/css/prestamos.css'  %}">
+
+
 <div class="home-content">
-    
-<form action="" method="post">
-    {%csrf_token%}
-    <div>
-        <label for="">Tipo de Prestamo</label>
-        <select name="" id="">
-            <option value="">Prestamo 1</option>
-            <option value="" selected>Prestamo 2</option>
-            <option value="">Prestamo 3</option>
-        </select>
-    </div>
-    <div>
-        <label for="">Fecha</label>
-        <input type="date" name="" id="">
-    </div>
-    <p>Para validar form:</p>
-    <a href="https://docs.djangoproject.com/en/4.0/topics/forms/">Link1</a>
-    <a href="https://docs.djangoproject.com/en/4.0/ref/forms/validation/">Link2</a>
-</form>
+        <section class="contenedor-prestamos">
+          <div class="prestamos">
+            <h2>Solicitud de Prestamo</h2>
+            <form action="" method="post">
+                  {%csrf_token%}
+                <div class="radio">
+                  <p>Tipo de Prestamo:</p>
+                  <div >
+                    <div class="opcion">
+                      <input type="radio" id="personal"  value="personal" name="loan_type">
+                      <label for="personal">Personal</label>
+                    </div>
+                
+                    <div class="opcion">
+                      <input type="radio" id="hipotecario"  value="hipotecario" name="loan_type">
+                      <label for="hipotecario">Hipotecario</label>
+                    </div>
+                
+                    <div class="opcion">
+                      <input type="radio" id="prendario"  value="prendario" name="loan_type">
+                      <label for="prendario">Prendario</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="monto">
+                  <label for="lbl-monto">Monto:</label>
+                  <input type="number" name="monto" id="lbl-monto" min="1" />
+                </div>
+                <button class="btn">Solicitar Prestamo</button>
+            </form>
+  
+          </div>
+        </section>
 </div>
 {% endblock %}

@@ -85,7 +85,7 @@ def TransferenciaView(request):
             except IntegrityError:
                 context['error'] = f'No existe el usuario {destinatario}'
 
-    return render(request, "cuentas/transferir.html", context)
+    return render(request, "cuentas/transferencias.html", context)
 
 
 class PerfilView(LoginRequiredMixin, TemplateView):

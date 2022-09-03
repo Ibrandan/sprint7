@@ -1,26 +1,26 @@
 /* ===== Google Font Import - Poppins ===== */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
-.container-accordion {
-    height: 90vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-end;
-}
-
 .accordion{
-    width: 50vw;
+    width: 60%;
+    height: 600px;
     margin: 0 auto;
-    margin-top: 5rem;
     background: #FFF;
-    padding: 15px;
-    border-radius: 8px;
+    border-radius: 20px;
     box-shadow:  0 0 4px rgba(0,0,0,0.2);
 }
-.accordion .accordion-content{
-    margin: 10px 0;
-    border-radius: 4px;
+
+.accordion h2 {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+.accordion-content{
+    width: 40vw;
+    margin: 10px auto;
+    border-radius: 10px;
     background: #eef3ff;
     border: 1px solid #698cfd;
     overflow: hidden;

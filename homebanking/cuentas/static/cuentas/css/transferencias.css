@@ -1,22 +1,31 @@
-.contenedor-prestamos {
+.transferencias {
     width: 100%;
     display: flex;
+    flex-direction: row;
     justify-content: center;
 }
 
-.prestamos {
-    width: 60%;
-    height: 600px;
-    background-color: #fff;
-    box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
-    border-radius: 20px;   
+.transferencias h2 {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    padding: 1rem;
 }
 
-.prestamos h2 {
-    margin-top: 1rem;
-    padding: 1rem;
-    font-size: 1.5rem;
-    text-align: center;
+.contenedor-form {
+    width: 60%;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+    border-radius: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
 }
 
 form {
@@ -25,55 +34,26 @@ form {
     align-items: center;
 }
 
-.radio {
-    width: 30%;
-    margin: 1rem;
-    padding: .5rem;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid #02568a;
-    border-radius: 10px;
+label {
+    font-size: 1.1rem;
+    margin: 0.5rem;
 }
-
-.radio p {
-    font-size: 1.2rem;
-    text-align: center;
-}
-
-.radio div {
-    margin-top: .5rem;
-}
-
-.opcion {
-    margin: 1rem 0;
-}
-
-.monto {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-}
-
-.monto label {
-    font-size: 1.2rem;
-}
-
-.monto input {
+  
+input {
     width: 300px;
-    text-align: center;
-    font-size: 1.2rem;
-    padding: .8rem;
+    font-size: 1.2srem;
+    height: 50px;
     border-radius: 10px;
+    text-align: center;
     border: 1px solid #02568a;
-}
 
+}
   
 .btn {
     margin-top: 1rem;
     width: 180px;
     outline: none;
-    padding: .9rem;
+    padding: .8rem;
     border-radius: 10px;
     font-weight: 600;
     text-transform: uppercase;

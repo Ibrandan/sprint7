@@ -49,9 +49,9 @@ const mostrarData = (data) => {
               <div class="number">$${data[i].casa.venta}</div>
               <div class="indicator">`
             if (data[i].casa.variacion > 0) {
-                body += `<i class="bx bx-up-arrow-alt"></i> <span class="text">Up from yesterday</span>`
+                body += `<i class='bx bxs-chevrons-up positivo'></i> <span class="text">Positivo desde ayer</span>`
             } else {
-                body += `<i class="bx bx-down-arrow-alt"></i> <span class="text">Down from yesterday</span>`
+                body += `<i class='bx bxs-chevrons-down negativo'></i> <span class="text">Negativo desde ayer</span>`
             }
             body += `
           </div >
@@ -59,6 +59,5 @@ const mostrarData = (data) => {
       </div > `
         }
     }
-    body += '<div class="mas"><a href="#" title="Ver más divisas"><i href="#" class="bi bi-plus-circle"></i><small>Ver más</small></a></div>'
     document.getElementById('extra-info').innerHTML = body;
 }
