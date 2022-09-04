@@ -25,49 +25,28 @@ form {
     align-items: center;
 }
 
-.radio {
-    width: 30%;
+.form-prestamo {
+    width: 40%;
     margin: 1rem;
-    padding: .5rem;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     border: 1px solid #02568a;
     border-radius: 10px;
 }
 
-.radio p {
-    font-size: 1.2rem;
+.form-prestamo label {
     text-align: center;
+    margin: .6rem;
 }
 
-.radio div {
-    margin-top: .5rem;
-}
-
-.opcion {
-    margin: 1rem 0;
-}
-
-.monto {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-}
-
-.monto label {
-    font-size: 1.2rem;
-}
-
-.monto input {
-    width: 300px;
+.form-prestamo input {
     text-align: center;
     font-size: 1.2rem;
     padding: .8rem;
     border-radius: 10px;
     border: 1px solid #02568a;
 }
-
   
 .btn {
     margin-top: 1rem;
