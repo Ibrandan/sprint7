@@ -17,9 +17,7 @@ class PrestamosForm(generic.CreateView):
     success_url = reverse_lazy('prestamos:prestamos')
     template_name = 'prestamos/prestamos.html'
     def form_valid(self, form):
-        
-        #super(PrestamosForm, self).form_valid(form)
-        print('asddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd')
+
         type = form.cleaned_data.get('loan_type')
         date = form.cleaned_data.get('loan_date')
         total =form.cleaned_data.get('loan_total')
