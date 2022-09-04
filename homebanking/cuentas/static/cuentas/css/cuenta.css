@@ -22,7 +22,8 @@
   justify-content: space-around;
 }
 
-.fondos, .botones {
+.fondos,
+.botones {
   width: 49%;
   height: 160px;
   background: #fff;
@@ -42,7 +43,7 @@
 .button {
   width: 250px;
   height: 50px;
-  color: #0A2558;
+  color: white;
   display: grid;
   place-items: center;
   border: 1px solid #0A2558;
